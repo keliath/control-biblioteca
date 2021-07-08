@@ -1,0 +1,14 @@
+lib_estado = sera el estado del libro siendo; 
+    1 - disponible
+    2 - solicitado
+    3 - prestado
+    0 - perdido
+
+
+pre_estado = sera el estado del prestamo del libro siendo;
+
+    1 - en solicitud
+    2 - prestado
+    3 - devuelto
+    4 - negado
+    0 - perdido

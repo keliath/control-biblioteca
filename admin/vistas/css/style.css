@@ -1,0 +1,116 @@
+/* =================================
+color personalizado
+================================= */
+
+.bg-purple,
+.btn-purple {
+    background-color: #727cb6!important;
+    color: white!important;
+}
+
+.card-purple {
+    border-top: 3px solid #727cb6!important;
+}
+
+.text-purple {
+    color: #727cb6!important;
+}
+
+
+/* =================================
+deslizador de videos  
+====================================*/
+
+.wrap-inner {
+    width: 100%;
+}
+
+.slick-prev,
+.slick-next {
+    color: gray!important;
+}
+
+.slide-academia a figure {
+    position: relative;
+}
+
+.slide-academia a figure.activado::before {
+    position: absolute;
+    content: "\f144";
+    font-family: "Font Awesome 5 Free";
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    width: 46px;
+    line-height: 46px;
+    background: rgba(0, 0, 0, 0.7);
+    top: 50%;
+    margin-top: -23px;
+    left: 50%;
+    margin-left: -23px;
+    border-radius: 100%;
+    z-index: 1;
+}
+
+.slide-academia a figure.desactivado::before {
+    position: absolute;
+    content: "Activar suscripcion";
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    width: 200px;
+    line-height: 70px;
+    background: rgba(0, 0, 0, 0.7);
+    top: 50%;
+    margin-top: -35px;
+    left: 50%;
+    margin-left: -100px;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.slide-academia a figure.desactivado img {
+    opacity: .7;
+}
+
+.slide-academia a figure.activado img {
+    opacity: 1;
+}
+
+
+/* =================================
+Formulario suscripcion
+====================================*/
+
+input[type="checkbox"] {
+    display: none;
+}
+
+label[for="aceptarTerminos"] span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #E9EcEf;
+    vertical-align: middle;
+    border-radius: 100%;
+    margin-right: 5px;
+    border: 1px solid #aaa;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked+label[for="aceptarTerminos"] span {
+    background: url("../img/plantilla/check.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid #fff;
+}
+
+
+/* =================================
+Firma
+====================================*/
+
+.select2 {
+    width: 100%!important;
+}
