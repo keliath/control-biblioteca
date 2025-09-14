@@ -58,17 +58,20 @@ FOOTER
 				<div class="p-5 visitanos">
 				
 					<h1 class="mt-5">Visítanos</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					<p>Te invitamos a conocer nuestras instalaciones y disfrutar de un ambiente perfecto para la lectura y el estudio.</p>
 
 					<p>
-					Apple inc.<br>
-					Infinte Loop.<br>
-					Cupertino, CA 95014<br>
-					408-996-1010
+					Biblioteca Alls<br>
+					Calle Principal 123<br>
+					Centro de la Ciudad<br>
+					Tel: (555) 123-4567<br>
+					Email: info@biblioteca-alls.com
 					</p>
 			
-					<p class="pb-lg-5">Email: info@apple.com<br>
-					Tel: 1-800-676-2775</p>
+					<p class="pb-lg-5">Horarios de atención:<br>
+					Lunes a Viernes: 8:00 AM - 8:00 PM<br>
+					Sábados: 9:00 AM - 6:00 PM<br>
+					Domingos: 10:00 AM - 4:00 PM</p>
 
 				</div>
 

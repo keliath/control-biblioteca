@@ -1,0 +1,114 @@
+version: '3.8'
+
+services:
+  # Aplicación PHP para desarrollo
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: biblioteca-app-dev
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      - DB_HOST=db
+      - DB_NAME=${DB_NAME:-control_biblioteca}
+      - DB_USER=${DB_USER:-biblioteca_user}
+      - DB_PASS=${DB_PASS:-biblioteca_pass}
+      - DB_PORT=3306
+      - APP_ENV=development
+      - APP_DEBUG=true
+    volumes:
+      # Bind mount para desarrollo - cambios en tiempo real
+      - .:/var/www/html
+      - app_uploads:/var/www/html/admin/vistas/img
+      - app_uploads_public:/var/www/html/vistas/img
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - biblioteca-network
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '1.0'
+        reservations:
+          memory: 256M
+          cpus: '0.5'
+
+  # Base de datos MySQL
+  db:
+    image: mysql:8.0
+    container_name: biblioteca-db-dev
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASS:-root_password}
+      - MYSQL_DATABASE=${DB_NAME:-control_biblioteca}
+      - MYSQL_USER=${DB_USER:-biblioteca_user}
+      - MYSQL_PASSWORD=${DB_PASS:-biblioteca_pass}
+    volumes:
+      - db_data_dev:/var/lib/mysql
+      - ./docker/mysql/init:/docker-entrypoint-initdb.d
+      - ./docker/mysql/conf:/etc/mysql/conf.d
+    ports:
+      - "3307:3306"
+    networks:
+      - biblioteca-network
+    deploy:
+      resources:
+        limits:
+          memory: 256M
+          cpus: '0.5'
+        reservations:
+          memory: 128M
+          cpus: '0.25'
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASS:-root_password}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    command: --default-authentication-plugin=mysql_native_password
+
+  # phpMyAdmin para desarrollo
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: biblioteca-phpmyadmin-dev
+    restart: unless-stopped
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+      - PMA_USER=${DB_USER:-biblioteca_user}
+      - PMA_PASSWORD=${DB_PASS:-biblioteca_pass}
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASS:-root_password}
+    ports:
+      - "8081:80"
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - biblioteca-network
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+          cpus: '0.25'
+        reservations:
+          memory: 64M
+          cpus: '0.1'
+
+volumes:
+  db_data_dev:
+    driver: local
+  app_uploads:
+    driver: local
+  app_uploads_public:
+    driver: local
+
+networks:
+  biblioteca-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

@@ -1,0 +1,60 @@
+# Dockerfile para desarrollo - Control de Biblioteca
+FROM php:8.2-apache
+
+# Instalar extensiones PHP y herramientas de desarrollo
+RUN apt-get update && apt-get install -y \
+    libpng-dev \
+    libjpeg-dev \
+    libfreetype6-dev \
+    libzip-dev \
+    unzip \
+    git \
+    curl \
+    vim \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd pdo pdo_mysql zip \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Instalar Composer
+COPY --from=composer:2.6 /usr/bin/composer /usr/bin/composer
+
+# Configurar Apache para desarrollo
+RUN a2enmod rewrite headers expires
+
+# Configurar PHP para desarrollo
+RUN echo "display_errors = On" >> /usr/local/etc/php/conf.d/development.ini \
+    && echo "error_reporting = E_ALL" >> /usr/local/etc/php/conf.d/development.ini \
+    && echo "log_errors = On" >> /usr/local/etc/php/conf.d/development.ini
+
+# Crear usuario para desarrollo
+RUN groupadd -r devuser && useradd -r -g devuser devuser
+
+# Configurar directorio de trabajo
+WORKDIR /var/www/html
+
+# Copiar aplicación
+COPY --chown=devuser:devuser . .
+
+# Instalar dependencias de desarrollo
+RUN cd admin/extensiones && composer install
+
+# Configurar permisos para desarrollo
+RUN chown -R devuser:devuser /var/www/html \
+    && chmod -R 755 /var/www/html \
+    && chmod -R 777 /var/www/html/admin/vistas/img \
+    && chmod -R 777 /var/www/html/vistas/img
+
+# Configurar Apache virtual host para desarrollo
+COPY docker/apache/000-default-dev.conf /etc/apache2/sites-available/000-default.conf
+COPY docker/apache/security-dev.conf /etc/apache2/conf-available/security-dev.conf
+RUN a2enconf security-dev
+
+# Cambiar a usuario de desarrollo
+USER devuser
+
+# Exponer puerto
+EXPOSE 80
+
+# Comando por defecto
+CMD ["apache2-foreground"]

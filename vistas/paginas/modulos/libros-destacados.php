@@ -24,7 +24,7 @@ CURSOS
 
 				<h4 class="text-center text-lg-left">Descripción</h4>
 
-				<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque perferendis ad ab dignissimos iste autem consequatur beatae ducimus, ullam eligendi officia alias nesciunt laudantium consequuntur recusandae quisquam saepe, modi accusantium!</p>
+				<p class="text-justify">Una novela de fantasía oscura que combina elementos sobrenaturales con una narrativa envolvente. El protagonista descubre un grimorio ancestral que cambiará su vida para siempre, enfrentándose a fuerzas que desafían la realidad misma.</p>
 
 				<a href="<?php echo $ruta; ?>registro"><button class="btn btn-info btn-lg mt-1 mt-lg-3 d-none d-lg-block">Crear cuenta gratis</button></a>
 
@@ -56,7 +56,7 @@ CURSOS
 
 				<h4 class="text-center text-lg-right">Descripción</h4>
 
-				<p class="text-lg-right text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque perferendis ad ab dignissimos iste autem consequatur beatae ducimus, ullam eligendi officia alias nesciunt laudantium consequuntur recusandae quisquam saepe, modi accusantium!</p>
+				<p class="text-lg-right text-justify">Una historia de ciencia ficción que explora temas de identidad, pertenencia y el significado de la humanidad. Los protagonistas deben navegar por un mundo donde las líneas entre lo real y lo artificial se desdibujan constantemente.</p>
 
 				<a href="<?php echo $ruta; ?>registro"><button class="float-right btn btn-info btn-lg mt-1 mt-lg-3 text-right d-none d-lg-block">Crear cuenta gratis</button></a>
 
@@ -84,7 +84,7 @@ CURSOS
 
 				<h4 class="text-center text-lg-left">Descripción</h4>
 
-				<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque perferendis ad ab dignissimos iste autem consequatur beatae ducimus, ullam eligendi officia alias nesciunt laudantium consequuntur recusandae quisquam saepe, modi accusantium!</p>
+				<p class="text-justify">Un thriller psicológico que sumerge al lector en una historia de misterio y suspense. La trama se desarrolla en un escenario donde la cordura y la locura se entrelazan de manera inquietante, dejando al lector cuestionando la realidad.</p>
 
 				<a href="<?php echo $ruta; ?>registro"><button class="btn btn-info btn-lg mt-1 mt-lg-3 d-none d-lg-block">Crear cuenta gratis</button></a>
 

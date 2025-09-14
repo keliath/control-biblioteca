@@ -14,6 +14,6 @@
 
     require_once("admin/extensiones/vendor/autoload.php");
 
-    $plantilla = new ControladorPlantilla;
-    $plantilla -> ctrPlantilla();
-?>
+        $plantilla = new ControladorPlantilla;
+        $plantilla -> ctrPlantilla();
+    ?>

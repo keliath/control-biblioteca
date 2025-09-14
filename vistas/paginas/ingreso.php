@@ -20,7 +20,7 @@
 
                         </div>
 
-                        <p class="text-center py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi sunt officia unde officiis</p>
+                        <p class="text-center py-3">Accede a tu cuenta para gestionar préstamos, reservar libros y explorar nuestro catálogo completo de literatura.</p>
 
                         <input type="email" class="form-control my-3 py-3" placeholder="Correo Electrónico" name="ingresoEmail" required>
 

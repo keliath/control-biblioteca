@@ -1,0 +1,247 @@
+# ===========================================
+# .gitignore para Control de Biblioteca
+# Proyecto PHP + MySQL + Docker
+# ===========================================
+
+# ===========================================
+# ARCHIVOS DE CONFIGURACIÓN SENSIBLES
+# ===========================================
+.env
+.env.local
+.env.*.local
+.env.production
+.env.staging
+config/database.php
+config/app.php
+
+# ===========================================
+# ARCHIVOS DE LOGS
+# ===========================================
+*.log
+logs/
+log/
+error.log
+access.log
+debug.log
+php_errors.log
+mysql_error.log
+
+# ===========================================
+# ARCHIVOS TEMPORALES Y CACHE
+# ===========================================
+*.tmp
+*.temp
+*.cache
+cache/
+tmp/
+temp/
+.tmp/
+.temp/
+
+# ===========================================
+# ARCHIVOS DEL SISTEMA OPERATIVO
+# ===========================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+
+# ===========================================
+# ARCHIVOS DE IDEs Y EDITORES
+# ===========================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PhpStorm/IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+
+# ===========================================
+# ARCHIVOS DE BACKUP
+# ===========================================
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+backup/
+backups/
+*.sql.backup
+
+# ===========================================
+# ARCHIVOS DE UPLOADS Y MEDIA
+# ===========================================
+# Mantener estructura pero ignorar contenido
+admin/vistas/img/usuarios/*
+!admin/vistas/img/usuarios/.gitkeep
+vistas/img/usuarios/*
+!vistas/img/usuarios/.gitkeep
+admin/vistas/img/libros/*
+!admin/vistas/img/libros/.gitkeep
+vistas/img/libros/*
+!vistas/img/libros/.gitkeep
+
+# Archivos de uploads temporales
+uploads/
+upload/
+media/
+files/
+
+# ===========================================
+# ARCHIVOS DE BASE DE DATOS
+# ===========================================
+*.sql
+*.db
+*.sqlite
+*.sqlite3
+database.sql
+dump.sql
+*.dump
+
+# ===========================================
+# ARCHIVOS DE COMPOSER
+# ===========================================
+vendor/
+composer.phar
+composer.lock
+
+# ===========================================
+# ARCHIVOS DE DOCKER
+# ===========================================
+# Mantener archivos de configuración pero ignorar datos
+docker/data/
+docker/volumes/
+docker/logs/
+
+# ===========================================
+# ARCHIVOS DE DESARROLLO
+# ===========================================
+# Node.js (si se agrega en el futuro)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# ===========================================
+# ARCHIVOS DE TESTING
+# ===========================================
+# PHPUnit
+.phpunit.result.cache
+phpunit.xml
+tests/_output/
+tests/_support/_generated/
+
+# ===========================================
+# ARCHIVOS DE DEPLOYMENT
+# ===========================================
+deploy/
+deployment/
+build/
+dist/
+
+# ===========================================
+# ARCHIVOS DE DOCUMENTACIÓN GENERADA
+# ===========================================
+docs/build/
+docs/_build/
+*.pdf
+*.docx
+
+# ===========================================
+# ARCHIVOS DE SESIONES
+# ===========================================
+sessions/
+session/
+
+# ===========================================
+# ARCHIVOS DE CONFIGURACIÓN LOCAL
+# ===========================================
+local_config.php
+local_settings.php
+config.local.php
+
+# ===========================================
+# ARCHIVOS DE MONITOREO
+# ===========================================
+monitoring/
+metrics/
+stats/
+
+# ===========================================
+# ARCHIVOS DE CERTIFICADOS SSL
+# ===========================================
+*.pem
+*.key
+*.crt
+*.csr
+ssl/
+certs/
+
+# ===========================================
+# ARCHIVOS DE CONFIGURACIÓN DE SERVIDOR
+# ===========================================
+.htaccess.local
+apache.conf.local
+nginx.conf.local
+
+# ===========================================
+# ARCHIVOS DE CACHE DE PHP
+# ===========================================
+*.php~
+*.php.bak
+opcache/
+
+# ===========================================
+# ARCHIVOS DE CONFIGURACIÓN DE DOCKER COMPOSE
+# ===========================================
+# Mantener archivos de configuración pero ignorar override locales
+docker-compose.override.yml
+docker-compose.local.yml
+
+# ===========================================
+# ARCHIVOS DE CONFIGURACIÓN DE MAKEFILE
+# ===========================================
+Makefile.local
+makefile.local
+
+# ===========================================
+# ARCHIVOS DE CONFIGURACIÓN DE GIT
+# ===========================================
+.gitattributes.local

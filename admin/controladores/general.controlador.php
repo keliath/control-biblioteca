@@ -3,16 +3,18 @@
 class ControladorGeneral
 {
 
-
     static public function ctrRuta()
     {
-
-        $v = 0;
-
-        if ($v) {
+        // Detectar si estamos en producción o desarrollo
+        $isProduction = isset($_ENV['APP_ENV']) && $_ENV['APP_ENV'] === 'production';
+        
+        if ($isProduction) {
             return "http://biblioteca-ec.online/";
         } else {
-            return "http://127.0.0.1/proyectos/biblioteca_Axel/";
+            // URL dinámica basada en el servidor actual
+            $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+            $host = $_SERVER['HTTP_HOST'] ?? 'localhost:8080';
+            return $protocol . '://' . $host . '/';
         }
     }
 }

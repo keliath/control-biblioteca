@@ -19,7 +19,7 @@
                         </div>
 
 
-                        <p class="text-center py-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi sunt officia unde officiis</p>
+                        <p class="text-center py-3">Únete a nuestra comunidad de lectores y accede a miles de libros físicos. Disfruta de préstamos gratuitos y descubre nuevas historias cada día.</p>
 
                         <input type="text" class="form-control my-3 py-3" placeholder="Nombre" name="registroNombre" required>
 

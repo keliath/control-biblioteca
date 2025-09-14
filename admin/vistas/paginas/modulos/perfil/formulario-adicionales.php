@@ -36,7 +36,7 @@ if (isset($_GET['ex'])) {
 
             <br>
 
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Id error molestias adipisci facilis neque ab vitae facere, ratione maxime fugit optio, magni mollitia corporis rerum expedita sunt explicabo sint quis?</a></p>
+            <p class="card-text">Completa tu perfil con información adicional que nos ayudará a brindarte un mejor servicio. Esta información es confidencial y solo será utilizada para mejorar tu experiencia en la biblioteca.</p>
 
             <div class="form-group">
 

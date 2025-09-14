@@ -73,19 +73,19 @@ VENTANA MODAL SOLICITAR LIBRO
                                 <div class="container">
                                     <div class="row">
                                         <h4>Descripción</h4>
-                                        <p class="text-justify" id="descipcionLibro">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet fuga dolores odit sit? Autem ut laborum maiores nulla velit omnis natus repellat at ducimus. Minima harum vero id at consectetur?</p>
+                                        <p class="text-justify" id="descipcionLibro">Selecciona un libro de nuestro catálogo para ver su descripción completa, información del autor, edición y detalles de disponibilidad. Nuestra biblioteca cuenta con una amplia variedad de géneros literarios para todos los gustos.</p>
                                     </div>
 
                                     <div class="row">
 
                                         <div class="col-6">
                                             <h4>Autor</h4>
-                                            <p id="autorLibro">lorem asdsa</p>
+                                            <p id="autorLibro">Autor no seleccionado</p>
                                         </div>
 
                                         <div class="col-6">
                                             <h4>Edición</h4>
-                                            <p id="edicionLibro">lorem asdsa</p>
+                                            <p id="edicionLibro">Edición no seleccionada</p>
                                         </div>
 
                                     </div>
